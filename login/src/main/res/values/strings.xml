@@ -1,0 +1,10 @@
+<resources>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="no_account">¿Aun no tienes cuenta?</string>
+    <string name="contact_us">Contactanos</string>
+    <string name="password">Contraseña</string>
+    <string name="log_in_title">Iniciar sesión</string>
+    <string name="log_in_button">INGRESAR</string>
+
+    <string name="user">Usuario</string>
+</resources>

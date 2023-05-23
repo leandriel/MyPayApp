@@ -1,4 +1,4 @@
-package com.leandroid.system.mypayapp.ui.theme
+package com.leandroid.system.login.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

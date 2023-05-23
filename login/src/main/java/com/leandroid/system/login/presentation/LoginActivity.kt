@@ -1,4 +1,4 @@
-package com.leandroid.system.mypayapp
+package com.leandroid.system.login.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,10 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.leandroid.system.login.presentation.LoginScreen
-import com.leandroid.system.mypayapp.ui.theme.MyPayAppTheme
+import com.leandroid.system.login.presentation.ui.theme.MyPayAppTheme
 
-class MainActivity : ComponentActivity() {
+class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -30,6 +29,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -42,6 +44,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MyPayAppTheme {
-        Greeting("Android")
+
     }
 }
