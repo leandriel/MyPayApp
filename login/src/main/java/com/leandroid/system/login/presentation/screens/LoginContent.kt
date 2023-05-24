@@ -16,7 +16,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Card
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -30,11 +29,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.leandroid.system.login.R
+import com.leandroid.system.mypayapp.presentation.navigation.screen.AuthScreen
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginContent(paddingValues: PaddingValues) {
+fun LoginContent(navController: NavHostController, paddingValues: PaddingValues) {
     Box(
         modifier = Modifier
             .padding(paddingValues = paddingValues)
@@ -109,7 +109,7 @@ fun LoginContent(paddingValues: PaddingValues) {
                     DefaultButton(
                         modifier = Modifier.fillMaxWidth(),
                         text = stringResource(R.string.log_in_button),
-                        onClick = { }
+                        onClick = { navController.navigate(route = AuthScreen.Dashboard.route) }
                     )
 
                     Row(
