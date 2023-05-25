@@ -1,4 +1,4 @@
-package com.leandroid.system.mypayapp.ui.theme
+package com.leandroid.system.dashboard.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -22,8 +22,8 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Red500,
-    secondary = Red700,
+    primary = Purple40,
+    secondary = PurpleGrey40,
     tertiary = Pink40
 
     /* Other default colors to override
