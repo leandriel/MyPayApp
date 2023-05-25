@@ -31,7 +31,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.leandroid.system.login.R
-import com.leandroid.system.mypayapp.presentation.navigation.screen.AuthScreen
 
 @Composable
 fun LoginContent(navController: NavHostController, paddingValues: PaddingValues) {
@@ -109,7 +108,7 @@ fun LoginContent(navController: NavHostController, paddingValues: PaddingValues)
                     DefaultButton(
                         modifier = Modifier.fillMaxWidth(),
                         text = stringResource(R.string.log_in_button),
-                        onClick = { navController.navigate(route = AuthScreen.Dashboard.route) }
+                        onClick = { navController.navigate(route = com.leandroid.system.dashboard.presentation.graph.AuthScreen.Dashboard.route) }
                     )
 
                     Row(

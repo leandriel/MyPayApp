@@ -68,4 +68,5 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     implementation(libs.androidx.navigation.compose)
+    implementation(project(":dashboard"))
 }
