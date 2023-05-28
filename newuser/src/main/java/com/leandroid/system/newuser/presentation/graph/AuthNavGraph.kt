@@ -1,19 +1,18 @@
-package com.leandroid.system.login.presentation.graph
+package com.leandroid.system.newuser.presentation.graph
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.leandroid.system.login.presentation.LoginScreen
-import com.leandroid.system.newuser.presentation.graph.Graph
+import com.leandroid.system.newuser.presentation.NewUserScreen
 
 fun NavGraphBuilder.AuthNavGraph(navController: NavHostController) {
     navigation(
         route = Graph.AUTH,
-        startDestination = AuthScreen.Login.route
+        startDestination = AuthScreen.NewUser.route
     ) {
-        composable(route = AuthScreen.Login.route) {
-            LoginScreen(navController)
+        composable(route = AuthScreen.NewUser.route) {
+            NewUserScreen(navController)
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.leandroid.system.login.presentation.components
+package com.leandroid.system.dashboard.presentation.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowForward
