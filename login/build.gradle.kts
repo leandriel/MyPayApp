@@ -69,4 +69,6 @@ dependencies {
 
     implementation(libs.androidx.navigation.compose)
     implementation(project(":dashboard"))
+    implementation(project(":components"))
+    implementation(project(":newuser"))
 }

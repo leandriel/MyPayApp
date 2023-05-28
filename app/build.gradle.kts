@@ -66,4 +66,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(project(":login"))
     implementation(project(":dashboard"))
+    implementation(project(":newuser"))
 }

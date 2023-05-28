@@ -16,3 +16,5 @@ rootProject.name = "MyPayApp"
 include(":app")
 include(":login")
 include(":dashboard")
+include(":newuser")
+include(":components")

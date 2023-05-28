@@ -8,6 +8,7 @@ import com.leandroid.system.dashboard.presentation.DashboardScreen
 import com.leandroid.system.login.presentation.LoginScreen
 import com.leandroid.system.mypayapp.presentation.navigation.Graph
 import com.leandroid.system.mypayapp.presentation.navigation.screen.AuthScreen
+import com.leandroid.system.newuser.presentation.NewUserScreen
 
 fun NavGraphBuilder.AuthNavGraph(navController: NavHostController){
     navigation(
@@ -18,7 +19,10 @@ fun NavGraphBuilder.AuthNavGraph(navController: NavHostController){
             LoginScreen(navController)
         }
         composable(route = AuthScreen.Dashboard.route){
-            DashboardScreen()
+            DashboardScreen(navController)
+        }
+        composable(route = AuthScreen.NewUser.route){
+            NewUserScreen(navController)
         }
     }
 }
