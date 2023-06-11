@@ -22,14 +22,15 @@ import com.leandroid.system.newuser.presentation.ui.theme.MyPayAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NewUserScreen(navController: NavHostController) {
+//fun NewUserScreen(navController: NavHostController) {
+fun NewUserScreen() {
 
     Scaffold(
         topBar = {
             DefaultTopBar(
                 title = "Crear nuevo usuario",
                 upAvailable = true,
-                navController = navController,
+//                navController = navController,
             )
         }
     ) { paddingValues ->
@@ -43,7 +44,8 @@ fun NewUserScreen(navController: NavHostController) {
 @Composable
 fun NewUserScreenPreview() {
     MyPayAppTheme {
-        NewUserScreen(rememberNavController())
+//        NewUserScreen(rememberNavController())
+        NewUserScreen()
     }
 
 }

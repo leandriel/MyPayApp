@@ -1,5 +1,6 @@
 package com.leandroid.system.login.presentation.components
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,22 +19,37 @@ import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.leandroid.system.login.R
+import com.leandroid.system.login.presentation.LoginViewModel
 
 @Composable
-fun LoginContent(navController: NavHostController, paddingValues: PaddingValues) {
+fun LoginContent(navController: NavHostController, paddingValues: PaddingValues, viewModel : LoginViewModel = hiltViewModel()) {
+
+
+    val state = viewModel.state
+    val context = LocalContext.current
+
+    LaunchedEffect(key1 = viewModel.errorMessage ){
+        if (viewModel.errorMessage != ""){
+            Toast.makeText(context, viewModel.errorMessage, Toast.LENGTH_LONG).show()
+        }
+    }
+
     Box(
         modifier = Modifier
             .padding(paddingValues = paddingValues)
@@ -87,8 +103,10 @@ fun LoginContent(navController: NavHostController, paddingValues: PaddingValues)
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(bottom = 20.dp),
-                        value = "",
-                        onValueChange = {},
+                        value = state.userName,
+                        onValueChange = {
+                            viewModel.onUserNameInput(it)
+                        },
                         label = stringResource(R.string.user),
                         icon = Icons.Default.AccountBox,
                         keyboardType = KeyboardType.Text
@@ -98,17 +116,20 @@ fun LoginContent(navController: NavHostController, paddingValues: PaddingValues)
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(bottom = 20.dp),
-                        value = "",
-                        onValueChange = {},
+                        value = state.password,
+                        onValueChange = {
+                            viewModel.onPasswordInput(it)
+                        },
                         label = stringResource(R.string.password),
                         icon = Icons.Default.Lock,
-                        keyboardType = KeyboardType.Password
+                        keyboardType = KeyboardType.Password,
+                        hideText = true
                     )
 
                     DefaultButton(
                         modifier = Modifier.fillMaxWidth(),
                         text = stringResource(R.string.log_in_button),
-                        onClick = { navController.navigate(route = com.leandroid.system.dashboard.presentation.graph.AuthScreen.Dashboard.route) }
+                        onClick = { viewModel.validateForm() }
                     )
 
                     Row(

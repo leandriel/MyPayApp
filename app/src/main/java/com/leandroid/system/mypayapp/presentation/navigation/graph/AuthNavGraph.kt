@@ -22,7 +22,8 @@ fun NavGraphBuilder.AuthNavGraph(navController: NavHostController){
             DashboardScreen(navController)
         }
         composable(route = AuthScreen.NewUser.route){
-            NewUserScreen(navController)
+//            NewUserScreen(navController)
+            NewUserScreen()
         }
     }
 }
