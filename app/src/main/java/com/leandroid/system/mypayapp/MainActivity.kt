@@ -14,7 +14,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.leandroid.system.mypayapp.presentation.navigation.graph.RootNavGraph
 import com.leandroid.system.mypayapp.ui.theme.MyPayAppTheme
+import com.leandroid.system.newuser.presentation.NewUserScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private lateinit var navController: NavHostController
@@ -27,8 +30,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    navController = rememberNavController()
-                    RootNavGraph(navController = navController)
+                    NewUserScreen()
+//                    navController = rememberNavController()
+//                    RootNavGraph(navController = navController)
                 }
             }
         }
